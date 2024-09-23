@@ -1,10 +1,12 @@
 import './App.css';
-import NavBar from './components/navbar';
+import Portfolio from './components/portfolio';
 function App() {
 
 
   return (
-    <NavBar/>
+
+    <Portfolio/>
+  
   );
 }
 
