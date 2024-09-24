@@ -3,20 +3,21 @@ import { motion } from "framer-motion"
 import TimeLine from './timeLine'
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
+
 import image1 from './artPicturesSmall/FF214426-E197-4400-A8C5-15F3704B6579.jpeg'
-import image2 from './artPicturesSmall/IMG_0158.jpg'
-import image3 from './artPicturesSmall/IMG_2271.jpg'
-import image4 from './artPicturesSmall/IMG_2463.jpg'
-import image5 from './artPicturesSmall/IMG_2495.jpg'
-import image6 from './artPicturesSmall/IMG_5958.jpg'
-import image7 from './artPicturesSmall/IMG_5977.jpg'
-import image8 from './artPicturesSmall/IMG_8779.jpg'
-import image9 from './artPicturesSmall/IMG_8848.jpg'
-import image10 from './artPicturesSmall/IMG_8981.jpg'
-import image11 from './artPicturesSmall/IMG_8984.jpg'
+import image2 from './artPicturesSmall/IMG_0158.jpeg'
+import image3 from './artPicturesSmall/IMG_2271.jpeg'
+import image4 from './artPicturesSmall/IMG_2463.jpeg'
+import image5 from './artPicturesSmall/IMG_2495.jpeg'
+import image6 from './artPicturesSmall/IMG_5958.jpeg'
+import image7 from './artPicturesSmall/IMG_5977.jpeg'
+import image8 from './artPicturesSmall/IMG_8779.jpeg'
+import image9 from './artPicturesSmall/IMG_8848.jpeg'
+import image10 from './artPicturesSmall/IMG_8981.jpeg'
+import image11 from './artPicturesSmall/IMG_8984.jpeg'
 
 
-const ArtCarousel = ({carouselID,carouselTrigger}) =>{
+const ArtCarousel = React.memo(({carouselID,carouselTrigger}) =>{
     const [carouselarray,setCarouselArray] = useState([])
     const [carouselIndex,setCarouselIndex] = useState(0)
 
@@ -268,7 +269,7 @@ const ArtCarousel = ({carouselID,carouselTrigger}) =>{
       );
       
 
-}; export default ArtCarousel
+}); export default ArtCarousel
 
 
 
