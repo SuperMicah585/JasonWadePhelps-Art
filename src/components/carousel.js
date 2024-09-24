@@ -1,22 +1,29 @@
 import React, {useState,useEffect,useRef} from 'react'
-import NavBar from './navbar';
+import { motion } from "framer-motion"
+import TimeLine from './timeLine'
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
-import image1 from './artPictures/FF214426-E197-4400-A8C5-15F3704B6579.jpg'
-import image2 from './artPictures/IMG_0158.jpg'
-import image3 from './artPictures/IMG_2271.jpg'
-import image4 from './artPictures/IMG_2463.jpg'
-import image5 from './artPictures/IMG_2495.jpg'
-import image6 from './artPictures/IMG_5958.jpg'
-import image7 from './artPictures/IMG_5977.jpg'
-import image8 from './artPictures/IMG_8779.jpg'
-import image9 from './artPictures/IMG_8848.jpg'
-import image10 from './artPictures/IMG_8981.jpg'
-import image11 from './artPictures/IMG_8984.jpg'
+import image1 from './artPicturesSmall/FF214426-E197-4400-A8C5-15F3704B6579.jpeg'
+import image2 from './artPicturesSmall/IMG_0158.jpg'
+import image3 from './artPicturesSmall/IMG_2271.jpg'
+import image4 from './artPicturesSmall/IMG_2463.jpg'
+import image5 from './artPicturesSmall/IMG_2495.jpg'
+import image6 from './artPicturesSmall/IMG_5958.jpg'
+import image7 from './artPicturesSmall/IMG_5977.jpg'
+import image8 from './artPicturesSmall/IMG_8779.jpg'
+import image9 from './artPicturesSmall/IMG_8848.jpg'
+import image10 from './artPicturesSmall/IMG_8981.jpg'
+import image11 from './artPicturesSmall/IMG_8984.jpg'
+
 
 const ArtCarousel = ({carouselID,carouselTrigger}) =>{
-    const [showCarousel,setShowCarousel] = useState('false')
-    const carouselRef = useRef();
+    const [carouselarray,setCarouselArray] = useState([])
+    const [carouselIndex,setCarouselIndex] = useState(0)
+
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
 
 
     const images = [
@@ -25,72 +32,246 @@ const ArtCarousel = ({carouselID,carouselTrigger}) =>{
         image11
     ];
 
+    const dealWithNegatives = (index) =>{
 
-    const responsive = {
-        superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 4
-        },
-        desktop: {
-          breakpoint: { max: 1550, min: 1180 },
-          items: 3
-        },
-        tablet: {
-          breakpoint: { max: 1180, min: 780 },
-          items: 2
-        },
-        mobile: {
-          breakpoint: { max: 780, min: 0 },
-          items: 1
-        }
-      };
-      const goToSlide = (index) => {
-        if (carouselRef.current) {
-            carouselRef.current.goToSlide(index);
-        }
-    };
+//-1 -> 1 -> 11-1
 
+    }
+
+
+    useEffect(() => {
+        let tmparray = []
+        const length = images.length
+
+        tmparray.push(images[carouselID===0?10:(carouselID-1)%length])
+        tmparray.push(images[(carouselID%length)])
+        tmparray.push(images[(carouselID+1)%length])
+        setCarouselArray(tmparray)
+        setCarouselIndex(carouselID)
+        
+      }, [carouselID]);
 
 
       useEffect(() => {
-        // Show carousel after the component mounts
-        setShowCarousel(true);
-    }, []);
-return(
+        const length = images.length
+        if(carouselIndex!==null){
+        let tmparray = []
+            tmparray.push(images[carouselIndex===0?10:(carouselIndex-1)%length])
+            tmparray.push(images[(carouselIndex%length)])
+            tmparray.push(images[(carouselIndex+1)%length])
+            setCarouselArray(tmparray)
+        }
+      }, [carouselIndex]);
 
-<div className='h-screen overflow-scroll bg-smoke-gray'>
 
-    <Carousel 
-        infinite={true} 
-        //initialSlide={carouselID} 
-        ref={carouselRef} 
-        responsive={responsive} 
-        className="mt-10"
-    >
-        {images.map((imgSrc, index) => (
-            <div key={index} className="flex flex-col items-center justify-center">
-                <div className='h-96 w-96'>
-                    <img
-                        src={imgSrc}
-                        alt={`Artwork ${index + 1}`}
-                        className="rounded-lg object-cover w-full h-full"
-                    />
-                </div>
-                <div className='text-white mt-2 text-center'>
-                    sjkdfnskdjnfskjdnfksjdnfksjdnfkjsndfjkskdjfkjsndjkf<br />
-                    sjkdfnskdjnfskjdnfksjdnfksjdnfkjsndfjkskdjfkjsndjkf<br />
-                    sjkdfnskdjnfskjdnfksjdnfksjdnfkjsndfjkskdjfkjsndjkf<br />
-                    sjkdfnskdjnfskjdnfksjdnfksjdnfkjsndfjkskdjfkjsndjkf<br />
-                    sjkdfnskdjnfskjdnfksjdnfksjdnfkjsndfjkskdjfkjsndjkf<br />
-                    sjkdfnskdjnfskjdnfksjdnfksjdnfkjsndfjkskdjfkjsndjkf
-                </div>
-            </div>
-        ))}
-    </Carousel>
+
+      const handleClickNext = () =>{
+            
+            setCarouselIndex(carouselIndex+1)
+        
+    
+      }
+
+//  -1 0 1  -1>11, or 11->1 12->2 13->3
+      const handleClickPrevious = () =>{
+            if(carouselIndex===0){
+                setCarouselIndex(10) 
+            }
+            else{
+            setCarouselIndex(carouselIndex-1)
+            }
+      }
+
+      const handleClickForThree = (index) =>{
+
+        if(index===0){
+            handleClickPrevious()
+        }
+        if(index===2){
+            handleClickNext()
+        }
+
+      }
+
+      const calculateColumns = () =>{
+        if(windowSize.width>1200){
+            return 3
+        }
+        else{
+            return 1
+        }
+
+    }
+
+    useEffect(() => {
+        const handleResize = () => {
+          setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+          });
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        // Clean up the event listener on component unmount
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
+
+    
+    const OneSlide = () =>{
+       
+        return(
+
+
+ <div className = 'relative'>
+
+<motion.div
+  
+
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 2 } }}
+            exit={{ opacity: 0 }}
+    
+    
+      >
+<div
+  style={{ height: '80vh', width: '60vw' }}
+  className='mt-10 rounded-lg bg-jet flex items-center justify-center'
+>
+
+
+<motion.img
+                        src={images[carouselIndex%11]}
+                        className="rounded-lg object-contain w-full h-full border-white border-2"
+                        whileHover={
+                         { opacity: 0.5 }
+                        }
+                        />
+
 </div>
-         
+</motion.div>
 
-      )
+
+<div
+    className='absolute opacity-50 z-25 w-12 h-12 hover:opacity-25 bg-gray-500 flex items-center justify-center rounded-full cursor-pointer'
+    style={{ top: '50%', right: '-55px',transform: 'translateY(-50%)' }}
+    onClick={handleClickNext}
+  >
+    <span className="text-black font-bold">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
+    </span>
+  </div>
+
+
+<div
+    className='absolute opacity-50 hover:opacity-25 z-25 w-12 h-12 bg-gray-500 flex items-center justify-center rounded-full cursor-pointer'
+    style={{ top: '50%',left:'-55px', transform: 'translateY(-50%)' }}
+    onClick={handleClickPrevious}
+  >
+    <span className="text-black font-bold">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </span>
+  </div>
+
+            </div>
+
+        )
+    }
+
+    const ThreeSlides = () =>{
+
+        return(
+
+            <>
+            {carouselarray.map((imgSrc, index) => 
+            { let appearance = (index ===0 || index===2)? 
+            'mt-36 mr-20 rounded-lg bg-black flex items-center justify-center ':
+            'mt-10 mr-20 rounded-lg bg-jet flex items-center justify-center'
+  
+            let inlineStyle = (index ===0 || index===2)? 
+            { height: '40vh', width: '15vw', cursor: 'pointer'}:
+            { height: '80vh', width: '40vw' }
+            
+
+  
+              return(
+                <>
+
+                    <div key={index}>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={
+                        index === 0 || index === 2
+                            ? { opacity: 0.4, transition: { duration: 2 } }
+                            : { opacity: 1, transition: { duration: 2 } }
+                        }
+                        exit={{ opacity: 0 }}
+                        style={inlineStyle}
+                        className={appearance}
+                        onClick={() => handleClickForThree(index)}
+                    >
+                        <motion.img
+                        src={imgSrc}
+                        alt={`Slide ${index + 1}`}
+                        className="rounded-lg object-contain w-full h-full border-white border-2"
+                        whileHover={
+                            index === 0 || index === 2 ? { scale: 1.05, opacity: .8 } : { opacity: 0.5 }
+                        }
+                        whileTap={index === 0 || index === 2 ? { scale: 0.95 } : null}
+                        />
+                    </motion.div>
+                    </div>
+                
+                </>
+
+              )
+  })}
+
+  
+            </>
+          
+
+        )
+
+
+    }
+
+
+
+
+      return (
+        <div className='h-screen overflow-scroll flex justify-center bg-black relative'> {/* Added 'relative' */}
+        {calculateColumns()===3?
+        
+        <ThreeSlides/>
+    :<OneSlide/>}
+    </div>
+
+      );
+      
 
 }; export default ArtCarousel
+
+
+
+         
+
+    

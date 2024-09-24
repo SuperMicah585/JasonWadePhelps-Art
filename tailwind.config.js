@@ -6,7 +6,8 @@ module.exports = {
       redhat: ['"Cinzel"', 'sans-serif'], // Custom font family
     },
     colors: {
-      'smoke-gray': '#1a1a1a',
+      'smoke-gray': '#1B1B1B',
+      'jet': '#000401'
     }},
   },
   plugins: [],
