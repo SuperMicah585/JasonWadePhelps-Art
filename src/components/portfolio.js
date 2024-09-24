@@ -84,6 +84,12 @@ const Portfolio = () =>{
             console.log(id)
           }
 
+
+        const closeTrigger = () =>{
+
+            setShowCarousel(false)
+        }
+
     /*
 
 <Carousel ref={carouselRef} responsive={responsive} className="mt-10">
@@ -105,7 +111,7 @@ return(
     (
         <>
             {showCarousel ? (
-                <Carousel carouselID = {carouselID} carouselTrigger ={carouselTrigger} />): (
+                <Carousel carouselID = {carouselID} closeTrigger ={closeTrigger} />): (
                 <div className='h-screen overflow-scroll bg-black flex'>
                     <div className='absolute top-0'>
                         <NavBar />

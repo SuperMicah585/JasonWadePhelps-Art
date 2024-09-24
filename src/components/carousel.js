@@ -17,7 +17,7 @@ import image10 from './artPicturesSmall/IMG_8981.jpeg'
 import image11 from './artPicturesSmall/IMG_8984.jpeg'
 
 
-const ArtCarousel = React.memo(({carouselID,carouselTrigger}) =>{
+const ArtCarousel = React.memo(({carouselID,closeTrigger}) =>{
     const [carouselarray,setCarouselArray] = useState([])
     const [carouselIndex,setCarouselIndex] = useState(0)
 
@@ -197,6 +197,9 @@ const ArtCarousel = React.memo(({carouselID,carouselTrigger}) =>{
         )
     }
 
+
+
+
     const ThreeSlides = () =>{
 
         return(
@@ -256,6 +259,22 @@ const ArtCarousel = React.memo(({carouselID,carouselTrigger}) =>{
     }
 
 
+    const CloseButton = () =>{
+
+
+      return(
+        <div  className ='right-5 absolute hover:opacity-25 z-25 w-10 h-10 bg-gray-500 flex items-center justify-center opacity-35 rounded-full cursor-pointer' onClick = {closeTrigger}>
+
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+        </div>
+      )
+
+    }
+
+
 
 
       return (
@@ -263,7 +282,12 @@ const ArtCarousel = React.memo(({carouselID,carouselTrigger}) =>{
         {calculateColumns()===3?
         
         <ThreeSlides/>
-    :<OneSlide/>}
+    :<OneSlide/>
+    }
+
+    <div className = 'absolute top-5 right-5'>
+      <CloseButton/>
+    </div>
     </div>
 
       );
