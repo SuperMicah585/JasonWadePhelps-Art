@@ -1,7 +1,5 @@
 import React, {useState,useEffect,useRef} from 'react'
 import { motion } from "framer-motion"
-import TimeLine from './timeLine'
-import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
 
 import image1 from './artPicturesSmall/FF214426-E197-4400-A8C5-15F3704B6579.jpeg'
