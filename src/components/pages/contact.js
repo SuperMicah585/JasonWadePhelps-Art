@@ -31,20 +31,20 @@ const instragramClick = () =>{
     <NavBar style={'light'}/>
 </div>
 
-<div className='ml-32 h-content mt-20'>
-<div className='ml-32 relative z-30 font-redhat text-3xl text-black'>
+<div className='ml-32 flex flex-col justify-center  mt-20 '>
+<div className='ml-32 relative z-30 font-redhat text-3xl text-black '>
                             Contact
 </div>
-
-<div className='absolute ml-32 text-black mt-20 mr-10 mb-10 grid grid-cols-2 col-start-2 border-black border-2'>
-<div className = 'mr-10'>
+<div className = 'flex items-center ml-32 content-start'>
+<div className='overflow-hidden max-h-600 gap-3 text-black mt-20 mr-10 grid grid-cols-2 col-start-2 border-black border-2 place-items-center'>
+<div className = 'overflow-hidden'>
     <motion.img
       src={jason}
-      className="hover:opacity-50 z-25 object-contain w-full h-full"
+      className="overflow-hidden hover:opacity-50 z-25 object-contain w-full h-full"
     />
 </div>
 
-<div className='text-black mb-10 flex items-center justify-center flex-col'>
+<div className='text-black mb-10 flex items-center justify-center flex-col grow'>
 <div>
     <p>
      
@@ -74,6 +74,8 @@ Purchasing inquiries, proposals for representation, <br/>and general questions s
 </svg>
 </div>
 </div>
+  </div>
+
   </div>
   </div>
 

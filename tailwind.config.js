@@ -8,6 +8,9 @@ module.exports = {
     colors: {
       'smoke-gray': '#1B1B1B',
       'jet': '#000401'
+    },
+    maxHeight: {
+      '600': '600px',
     }},
   },
   plugins: [],
