@@ -35,7 +35,7 @@ const instragramClick = () =>{
 <div className='h-32 ml-32 relative z-30 font-redhat text-3xl text-black'>
                             Contact
 </div>
-<div className ='relative min-w-min pb-10 inset-0 flex items-center justify-center ml-48 mr-10 bg-stone-200 text-lg object-contain rounded-md'>
+<div className ='relative min-w-min pb-10 inset-0 flex items-center justify-center ml-32 mr-10 bg-stone-200 text-lg object-contain rounded-md'>
 
 <div className='min-w-min pb-10 pt-10 mr-10 ml-10 mt-10 bg-cyan-700 rounded-md text-center justify-center items-center flex'>
 
