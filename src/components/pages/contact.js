@@ -33,7 +33,7 @@ const instragramClick = () =>{
 
 <div className='ml-32 h-content mt-20'>
 <div className='h-32 ml-32 relative z-30 font-redhat text-3xl text-black'>
-                            Biography
+                            Contact
 </div>
 <div className ='relative min-w-min pb-10 inset-0 flex items-center justify-center ml-48 mr-10 bg-stone-200 text-lg object-contain rounded-md'>
 
