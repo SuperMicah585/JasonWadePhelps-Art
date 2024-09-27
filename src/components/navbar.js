@@ -6,7 +6,7 @@ const NavBar = ({ style }) => {
   const [navItemsStyle, setNavItemsStyle] = useState('');
   const [nameFooter, setNameFooter] = useState('');
 
-  const navBar = ['Home', 'Portfolio', 'Bio', 'CV', 'Contact'];
+  const navBar = ['Home', 'Portfolio','CV','Bio','Contact' ];
 
   const setStyles = () => {
     switch (style) {
