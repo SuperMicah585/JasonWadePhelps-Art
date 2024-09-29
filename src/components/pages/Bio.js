@@ -98,3 +98,29 @@ const Bio = () => {
   };
   
   export default Bio;
+
+
+  /*
+
+      -webkit-text-size-adjust: 100%;
+    font-family: termina,sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 83px !important;
+    text-transform: uppercase !important;
+    line-height: .9em !important;
+    letter-spacing: -1px !important;
+    font-style: normal;
+    text-decoration: none;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='black' stroke-width='1' class='squiggle' stroke-opacity='1' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: center bottom -7%;
+    background-size: auto 3px;
+    background-repeat: repeat-x;
+    color: #000;
+    border-bottom: none !important;
+    -webkit-transition: .16s ease-out;
+    -webkit-font-smoothing: antialiased;
+
+
+
+
+  */
