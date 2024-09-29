@@ -28,21 +28,12 @@ const instragramClick = () =>{
 
         <div className='h-screen white'>
 <div className='absolute top-0'>
-    <NavBar style={'light'}/>
+    <NavBar style={'Contact'}/>
 </div>
 
-<div className='ml-32 flex flex-col justify-center  mt-20 '>
-<div className='ml-32 relative z-30 font-redhat text-3xl text-black '>
-                            Contact
-</div>
-<div className = 'flex items-center ml-32 content-start'>
-<div className='overflow-hidden max-h-600 gap-3 text-black mt-20 mr-10 grid grid-cols-2 col-start-2 border-black border-2 place-items-center'>
-<div className = 'overflow-hidden'>
-    <motion.img
-      src={jason}
-      className="overflow-hidden hover:opacity-50 z-25 object-contain w-full h-full"
-    />
-</div>
+<div className='flex flex-col justify-center  mt-20 '>
+<div className = 'flex items-center ml-10 content-start'>
+<div className='overflow-hidden max-h-600 gap-3 text-black mt-20 grid grid-cols-2 col-start-2 border-black border-2 place-items-center'>
 
 <div className='text-black mb-10 flex items-center justify-center flex-col grow'>
 <div>
@@ -76,6 +67,15 @@ Purchasing inquiries, proposals for representation, <br/>and general questions s
 </div>
   </div>
 
+<div className = 'overflow-hidden'>
+    <motion.img
+      src={jason}
+      className="overflow-hidden hover:opacity-50 z-25 object-contain w-full h-full"
+    />
+</div>
+
+
+
   </div>
   </div>
 
@@ -90,4 +90,7 @@ Purchasing inquiries, proposals for representation, <br/>and general questions s
         
     )
     
-}; export default Contact
+}; export default Contact;
+
+
+

@@ -53,14 +53,11 @@ const Bio = () => {
     return(
 <div className='h-screen white'>
 <div className='absolute top-0'>
-    <NavBar style={'light'}/>
+    <NavBar style={'About'}/>
 </div>
-<div className='ml-32 h-content mt-20'>
-<div className='ml-32 font-redhat text-3xl text-black'>
-                            Biography
-</div>
+<div className='ml-10 h-content mt-20'>
 
-<p className ='max-w-3xl absolute items-center text-sm justify-center ml-32 mr-32 mt-20 bg-white text-lg object-contain rounded-md'>
+<p className ='max-w-3xl absolute items-center text-sm justify-center mt-20 bg-white text-lg object-contain rounded-md'>
 <div>
       <p>
         Jason is an artist and art educator in the American Pacific Northwest. He was raised around the 

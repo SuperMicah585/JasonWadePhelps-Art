@@ -9,12 +9,12 @@ const Cv = () => {
 
 
 <div className='absolute top-0'>
-    <NavBar style={'light'}/>
+    <NavBar style={'CV'}/>
 </div>
 
 <div>
             
-          <div className="ml-64 max-w-3xl mx-auto bg-white p-6 shadow-lg mt-10">
+          <div className="ml-10 mt-32 max-w-3xl mx-auto bg-white p-6 shadow-lg mt-10">
             
             <h1 className="text-4xl text-center font-bold mb-2">Jason Wade Phelps</h1>
             <p className="text-center text-gray-600 mb-8">

@@ -117,9 +117,7 @@ return(
                     </div>
 
                     <div className='ml-32 h-content mt-20'>
-                        <div className='ml-32 font-redhat text-3xl text-slate-200'>
-                            PORTFOLIO
-                        </div>
+
                         <div className={`h-content mt-20 grid gap-2 ml-32 mr-5 ${
                             calculateColumns() === 4 ? 'grid-cols-4' :
                             calculateColumns() === 3 ? 'grid-cols-3' :
