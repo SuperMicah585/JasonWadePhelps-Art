@@ -4,20 +4,9 @@ import { Link } from 'react-router-dom';
 
 const NavBar = ({ style }) => {
 
-  const squigglyPath = `
+  const straightPath = `
   M 10 80
-  C 30 60, 50 100, 70 80
-  S 90 60, 110 80
-  S 130 100, 150 80
-  S 170 60, 190 80
-  S 210 100, 230 80
-  S 250 60, 270 80
-  S 290 100, 310 80
-  S 330 60, 350 80
-  S 370 100, 390 80
-  S 410 60, 430 80
-  S 450 100, 470 80
-  S 490 60, 510 80
+  L 510 80
 `;
 
   const [isHovered, setIsHovered] = useState('');
@@ -105,17 +94,17 @@ className="absolute ml-12 h-5 mt-2 w-fit overflow-hidden "
     
       <motion.path
         className = {item===style || item===isHovered?'opacity-100':'opacity-0'}
-        d={squigglyPath}
+        d={straightPath}
         fill="transparent"
         stroke="black"
-        strokeWidth="4"
+        strokeWidth="8"
         initial={{ pathLength: 1, pathOffset: 0 }}  // Start fully drawn but offset
         animate={{
           pathLength: isHovered===item ? 0 : 1, // Stay full length when hovered
           pathOffset: isHovered===item ? 1 : 0,  // Offset to start position when not hovered
         }}
         transition={{
-          duration: 1,
+          duration: .8,
           ease: "easeInOut",
           repeat: isHovered ===item? Infinity:0,
           repeatType: "reverse",

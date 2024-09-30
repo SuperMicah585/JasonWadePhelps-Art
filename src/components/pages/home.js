@@ -14,17 +14,7 @@ import image8 from '../artPicturesSmall/IMG_8779.jpeg'
 import image9 from '../artPicturesSmall/IMG_8848.jpeg'
 import image10 from '../artPicturesSmall/IMG_8981.jpeg'
 import image1 from '../artPicturesSmall/IMG_8984.jpeg'
-import image12 from '../artPicturesSmall/FF214426-E197-4400-A8C5-15F3704B6579.jpeg'
-import image13 from '../artPicturesSmall/IMG_0158.jpeg'
-import image14 from '../artPicturesSmall/IMG_2271.jpeg'
-import image15 from '../artPicturesSmall/IMG_2463.jpeg'
-import image16 from '../artPicturesSmall/IMG_2495.jpeg'
-import image17 from '../artPicturesSmall/IMG_5958.jpeg'
-import image18 from '../artPicturesSmall/IMG_5977.jpeg'
-import image19 from '../artPicturesSmall/IMG_8779.jpeg'
-import image20 from '../artPicturesSmall/IMG_8848.jpeg'
-import image21 from '../artPicturesSmall/IMG_8981.jpeg'
-import image22 from '../artPicturesSmall/IMG_8984.jpeg'
+
 const Home =()=>{
 
     const [windowSize, setWindowSize] = useState({
@@ -37,8 +27,7 @@ const Home =()=>{
     const images = [
         image1, image2, image3, image4, image5, 
         image6, image7, image8, image9, image10, 
-        image11,image12,image13,image14,image15,image16,
-        image17,image18,image19,image20,image21,image22
+        image11
     ];
 
 
@@ -64,12 +53,12 @@ return (
 
 <Navbar style = {'Portfolio'}/>
 
-<div className="mt-24 ml-3 mr-3">
+<div className="mt-24 ml-10 mr-10">
 <ResponsiveMasonry
 
-                columnsCountBreakPoints={{600: 1,900:2, 1200: 3, 1400: 4}}
+                columnsCountBreakPoints={{600: 1,900:2, 1200: 3, 1400: 3}}
             >
-                <Masonry>
+                <Masonry gutter = '5px'>
                 {images.map((imgSrc, index) => (
     <motion.div 
     initial={{ opacity: 0 }}
@@ -82,12 +71,12 @@ return (
             whileHover={
             { 
             filter: 'blur(2px)',
-            scale: 1.4,
+            scale: 1.1,
             opacity:.5
         }
         }
         transition={{
-            duration: 0.3, // Duration of the hover animation
+            duration: 1, // Duration of the hover animation
             ease: 'easeInOut' // Easing function for a smoother transition
         }}
 
@@ -98,7 +87,7 @@ return (
 
       <div className ='absolute flex justify-center items-center group 
       text-black text-opacity-0 group-hover:text-opacity-100 pointer-events-none'>
-        <div className ='font-termina text-5xl font-black'>
+        <div className ='font-termina text-3xl font-black'>
                     COOL NAME
         </div>
 
