@@ -43,7 +43,7 @@ const LinkedInClick = () =>{
 
 
   return (
-    <div className='z-20 w-screen bg-white absolute flex h-24 gap-16 items-center'>
+    <div className='z-20 w-screen bg-white fixed flex h-24 gap-16 items-center'>
 
         
     <div className ='flex flex-col place-content-start gap-0'

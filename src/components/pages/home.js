@@ -4,11 +4,11 @@ import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import { Link } from 'react-router-dom';
 import Navbar from '../navbar'
 import image11 from '../artPicturesSmall/FF214426-E197-4400-A8C5-15F3704B6579.jpeg'
-import image7 from '../artPicturesSmall/IMG_0158.jpeg'
+import image6 from '../artPicturesSmall/IMG_5958.jpeg'
 import image3 from '../artPicturesSmall/IMG_2271.jpeg'
 import image4 from '../artPicturesSmall/IMG_2463.jpeg'
 import image5 from '../artPicturesSmall/IMG_2495.jpeg'
-import image6 from '../artPicturesSmall/IMG_5958.jpeg'
+import image7 from '../artPicturesSmall/IMG_0158.jpeg'
 import image2 from '../artPicturesSmall/IMG_5977.jpeg'
 import image8 from '../artPicturesSmall/IMG_8779.jpeg'
 import image9 from '../artPicturesSmall/IMG_8848.jpeg'
@@ -25,9 +25,9 @@ const Home =()=>{
 
     
     const images = [
-        image1, image2, image3, image4, image5, 
-        image6, image7, image8, image9, image10, 
-        image11
+        image1, image6, image11, image8, image5, 
+        image7, image3, image4, image9, image10, 
+        image2
     ];
 
 
@@ -53,7 +53,7 @@ return (
 
 <Navbar style = {'Portfolio'}/>
 
-<div className="mt-24 ml-10 mr-10">
+<div className="mt-20 ml-10 mr-10 mb-20">
 <ResponsiveMasonry
 
                 columnsCountBreakPoints={{600: 1,900:2, 1200: 3, 1400: 3}}

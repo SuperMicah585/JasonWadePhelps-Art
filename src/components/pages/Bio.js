@@ -1,24 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import NavBar from '../navbar';
-
+import angstPic from '../aboutPictures/angst.png'
+import { motion } from "framer-motion"
 const Bio = () => {
 
-   
-        const containerStyle = {
-          fontFamily: "'Georgia', serif",
-          lineHeight: 1.6,
-          padding: '20px',
-          margin: 'auto',
-          backgroundColor: '#f8f9fa',
-          border: '1px solid #ddd',
-          borderRadius: '10px',
-        };
-      
-        const paragraphStyle = {
-          fontSize: '1.2em',
-      
-        };
-      
+        const [pictureText,setPictureText] = useState('')
+        console.log(pictureText,"hello")
         const highlightedStyle = {
           fontWeight: 'bold',
                
@@ -29,20 +16,7 @@ const Bio = () => {
    
         };
       
-   
-        const wildernessStyle = {
-          fontWeight: 'bold',
-        
-        };
-      
-        const quoteStyle = {
-          fontSize: '1.1em',
-          margin: '15px 0',
-          padding: '10px',
-          borderLeft: '3px solid #2a9d8f',
-          backgroundColor: '#fafafa',
-        };
-      
+
         const emailStyle = {
        
           textDecoration: 'none',
@@ -50,22 +24,67 @@ const Bio = () => {
         };
 
 
-    return(
-<div className='h-screen white'>
-<div className='absolute top-0'>
-    <NavBar style={'About'}/>
-</div>
-<div className='ml-10 h-content mt-20'>
+      const PicText = ({text}) =>{
 
-<p className ='max-w-3xl absolute items-center text-sm justify-center mt-20 bg-white text-lg object-contain rounded-md'>
+        console.log(text)
+        return(
+
+        <motion.div
+        className="inline"
+        onMouseEnter = {()=>setPictureText(text)}
+        onMouseLeave = {()=>setPictureText('')}
+         whileHover={
+          { 
+          opacity:.5
+      }
+      }>
+        {text}
+    </motion.div>
+
+        )
+      }
+
+
+      const PicPopUp = ({ pictureText }) => {
+        console.log("inside");
+      
+        // Render the image only if pictureText matches 'Angst Gallery'
+        if (pictureText !== 'Angst Gallery') return null;
+      
+        return (
+          <motion.img
+            className='absolute z-50 left-2/4 top-2/4 w-48 h-48'
+            transition={{
+              duration: 1, // Duration of the hover animation
+              ease: 'easeInOut', // Easing function for a smoother transition
+            }}
+            src={angstPic} // Set the image source directly
+            alt="Angst Gallery" // Always provide an alt attribute for images
+          />
+        );
+      };
+
+    return(
+<div className='h-screen w-screen bg-white overflow-scroll'>
+
+    <NavBar style={'About'}/>
+
+<motion.div className='ml-10 h-content mt-24 flex justify-center'>
+
+<div className ='mt-24 mb-20 max-w-4xl items-center text-sm justify-center bg-white text-sm cursor-default object-contain rounded-md'>
 <div>
-      <p>
-        Jason is an artist and art educator in the American Pacific Northwest. He was raised around the 
-         <em> mountains and rivers</em> of Southern Oregon, where he fostered an instinct to wander, collect, and create. Jason worked as a vineyard hand, forester, and carpenter, all of which contributed to shaping his aesthetics, content, and process. He went on to receive his <span style={highlightedStyle}>Bachelor of Fine Arts</span> degree in both painting and sculpture at Southern Oregon University. Being heavily influenced by <span style={italicStyle}>Joseph Beuys</span> and the notion that art can have a transformative effect on the people who experience it, Jason decided to pursue his <span style={highlightedStyle}>Master's in the Arts of Teaching</span> from Pacific University in Oregon.
+      <h1 className="text-6xl mb-4 font-moret">
+        <span style = {highlightedStyle}>Jason Phelps </span>
+        is an artist and art educator in the American Pacific Northwest. He was raised around the 
+         <em> mountains and rivers</em> of Southern Oregon, where he fostered an instinct to wander, collect, and create. 
+         </h1>
+         <div className='mt-20'>
+         <p>
+         Jason worked as a vineyard hand, forester, and carpenter, all of which contributed to shaping his aesthetics, content, and process. He went on to receive his <span style={highlightedStyle}>Bachelor of Fine Arts</span> degree in both painting and sculpture at Southern Oregon University. Being heavily influenced by <span style={italicStyle}>Joseph Beuys</span> and the notion that art can have a transformative effect on the people who experience it, Jason decided to pursue his <span style={highlightedStyle}>Master's in the Arts of Teaching</span> from Pacific University in Oregon.
       </p>
       <br />
       <p>
-        Being among the mountains and rivers is still instrumental to his process. Dirt, roots, shells, plants, and rust are often combined in paint, plaster, wax, or resin. In the spring of 2010, Jason exhibited "<span style={italicStyle}>Under the Wing of Corvus</span>" at the <span style={highlightedStyle}>Angst Gallery</span> in Vancouver, Washington. The exhibition explored the art, literature, and mythology of <span style={italicStyle}>crows and ravens</span>. He has since followed up with <span style={italicStyle}>Mythos</span> and <span style={italicStyle}>Sojourn</span>.
+        Being among the mountains and rivers is still instrumental to his process. Dirt, roots, shells, plants, and rust are often combined in paint, plaster, wax, or resin. In the spring of 2010, Jason exhibited "<span style={italicStyle}>Under the Wing of Corvus</span>" at the <span style={highlightedStyle}> <PicText text = 'Angst Gallery' /></span> in Vancouver, Washington. The exhibition explored the art, literature, and mythology of <span style={italicStyle}>crows and ravens</span>. He has since followed up with <span style={italicStyle}>Mythos</span> and <span style={italicStyle}>Sojourn</span>.
       </p>
       <br />
       <p>
@@ -83,6 +102,7 @@ const Bio = () => {
         Contact Jason for commissions or collaboration at 
         <a href="mailto:jasonwadephelps@gmail.com" style={emailStyle}> jasonwadephelps@gmail.com</a>
       </p>
+      </div>
     </div>
 
 
@@ -90,8 +110,10 @@ const Bio = () => {
  
 
 
-</p>
 </div>
+</motion.div>
+
+<PicPopUp pictureText = {pictureText} />
 </div>
 
     )
