@@ -53,7 +53,12 @@ return (
 
 <Navbar style = {'Portfolio'}/>
 
-<div className="mt-20 ml-10 mr-10 mb-20">
+<motion.div 
+        transition={{
+          duration: 1, // Duration of the hover animation
+          ease: 'easeInOut' // Easing function for a smoother transition
+      }}
+className="mt-20 ml-10 mr-10 mb-20">
 <ResponsiveMasonry
 
                 columnsCountBreakPoints={{600: 1,900:2, 1200: 3, 1400: 3}}
@@ -87,7 +92,7 @@ return (
 
       <div className ='absolute flex justify-center items-center group 
       text-black text-opacity-0 group-hover:text-opacity-100 pointer-events-none'>
-        <div className ='font-termina text-3xl font-black'>
+        <div className ='font-termina text-6xl font-black'>
                     COOL NAME
         </div>
 
@@ -96,7 +101,7 @@ return (
   ))}
                 </Masonry>
             </ResponsiveMasonry>
-            </div>
+            </motion.div>
 </div>
             
            

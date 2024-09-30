@@ -53,7 +53,7 @@ const Bio = () => {
       
         return (
           <motion.img
-            className='absolute z-50 left-2/4 top-2/4 w-48 h-48'
+            className='absolute z-50 left-1/4 top-1/4 w-48 h-48'
             transition={{
               duration: 1, // Duration of the hover animation
               ease: 'easeInOut', // Easing function for a smoother transition
