@@ -54,7 +54,7 @@ const LinkedInClick = () =>{
 
 
   return (
-    <div className='z-20 w-screen bg-white absolute flex h-24 gap-16 items-center '>
+    <div className='z-20 w-screen bg-white absolute flex h-24 gap-16 items-center'>
 
         
     <div className ='flex flex-col place-content-start gap-0'
@@ -107,7 +107,7 @@ className="absolute ml-12 h-5 mt-2 w-fit overflow-hidden "
         className = {item===style || item===isHovered?'opacity-100':'opacity-0'}
         d={squigglyPath}
         fill="transparent"
-        stroke={isHovered===item?"#3498db":"black"}
+        stroke="black"
         strokeWidth="4"
         initial={{ pathLength: 1, pathOffset: 0 }}  // Start fully drawn but offset
         animate={{

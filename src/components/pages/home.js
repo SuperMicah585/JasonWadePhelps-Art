@@ -64,8 +64,9 @@ return (
 
 <Navbar style = {'Portfolio'}/>
 
-<div className="mt-24">
+<div className="mt-24 ml-3 mr-3">
 <ResponsiveMasonry
+
                 columnsCountBreakPoints={{600: 1,900:2, 1200: 3, 1400: 4}}
             >
                 <Masonry>
@@ -76,13 +77,12 @@ return (
 
     }
     exit={{ opacity: 0 }}
-    key={index} className="relative object-contain flex items-center justify-center group overflow-hidden cursor-pointer"> {/* Container for each image */}
+    key={index} className=" border-white border-2 relative object-contain flex items-center justify-center group overflow-hidden cursor-pointer"> {/* Container for each image */}
       <motion.img
             whileHover={
             { 
             filter: 'blur(2px)',
             scale: 1.4,
-            rotate: 5,
             opacity:.5
         }
         }
@@ -119,25 +119,5 @@ return (
   
 }; export default Home; 
 
-/*
 
-      const calculateColumns = () =>{
-      
-          if(windowSize.width>1200){
-              console.log(windowSize,"hi")
-              return 4
-          }
-
-          else if(windowSize.width>900){
-              return 3
-          }
-          else if(windowSize.width>600){
-              return 2
-          }
-          else {
-              return 1
-          }
-
-
-      }*/
 
