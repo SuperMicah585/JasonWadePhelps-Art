@@ -31,7 +31,7 @@ const Bio = () => {
         return(
 
         <motion.div
-        className="inline"
+        className="inline border-b-2 border-dotted border-black"
         onMouseEnter = {()=>setPictureText(text)}
         onMouseLeave = {()=>setPictureText('')}
          whileHover={
@@ -106,7 +106,7 @@ const Bio = () => {
       </p>
       <br />
       <p>
-        Being among the mountains and rivers is still instrumental to his process. Dirt, roots, shells, plants, and rust are often combined in paint, plaster, wax, or resin. In the spring of 2010, Jason exhibited "<span style={italicStyle}>Under the Wing of Corvus</span>" at the <span style={highlightedStyle}> <PicText text = 'Angst Gallery' /></span> in Vancouver, Washington. The exhibition explored the art, literature, and mythology of <span style={italicStyle}>crows and ravens</span>. He has since followed up with <span style={italicStyle}>Mythos</span> and <span style={italicStyle}>Sojourn</span>.
+        Being among the mountains and rivers is still instrumental to his process. Dirt, roots, shells, plants, and rust are often combined in paint, plaster, wax, or resin. In the spring of 2010, Jason exhibited "<span style={italicStyle}>Under the Wing of Corvus</span>" at the  <PicText text = 'Angst Gallery' /> in Vancouver, Washington. The exhibition explored the art, literature, and mythology of <span style={italicStyle}>crows and ravens</span>. He has since followed up with <span style={italicStyle}>Mythos</span> and <span style={italicStyle}>Sojourn</span>.
       </p>
       <br />
       <p>
