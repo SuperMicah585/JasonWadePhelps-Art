@@ -12,6 +12,8 @@ const Cv = () => {
     <NavBar style={'CV'}/>
 </div>
 
+<div className = 'flex justify-center'>
+
 <div>
             
           <div className="ml-10 mt-32 max-w-3xl mx-auto bg-white p-6 shadow-lg mt-10">
@@ -172,6 +174,7 @@ const Cv = () => {
                 <li>2010-Present Columbia River High School International Baccalaureate Art, Vancouver, WA</li>
               </ul>
             </section>
+          </div>
           </div>
           </div>
           </div>
