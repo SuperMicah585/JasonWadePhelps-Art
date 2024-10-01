@@ -105,7 +105,7 @@ className="absolute mr-1 h-5 mt-2 w-fit overflow-hidden "
           pathOffset: isHovered===item ? 1 : 0,  // Offset to start position when not hovered
         }}
         transition={{
-          duration: .8,
+          duration: 1.5,
           ease: "easeInOut",
           repeat: isHovered ===item? Infinity:0,
           repeatType: "reverse",
