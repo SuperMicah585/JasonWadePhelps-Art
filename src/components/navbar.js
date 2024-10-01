@@ -121,7 +121,7 @@ className="absolute mr-1 h-5 mt-2 w-fit overflow-hidden "
 
       </div>
 
-      <div className='flex items-center justify-center flex-row ml-auto mr-5'>
+      <div className='flex items-center justify-center flex-row ml-auto mr-12'>
 
 <div onClick = {instragramClick} className='hover:opacity-50 cursor-pointer'>
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-instagram" viewBox="0 0 16 16">
