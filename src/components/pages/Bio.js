@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
 import NavBar from '../navbar';
 import angstPic from '../aboutPictures/angst.png'
+import jasonRiverPic from '../aboutPictures/jason_on_river.jpg'
 import { motion } from "framer-motion"
 const Bio = () => {
 
@@ -26,8 +27,6 @@ const Bio = () => {
 
 
       const PicText = ({text}) =>{
-
-        console.log(text)
         return(
 
         <motion.div
@@ -47,19 +46,37 @@ const Bio = () => {
 
 
       const PicPopUp = ({ pictureText }) => {
-        console.log("inside");
-      
+        console.log(pictureText,"Test")
+        const randomNumber = Math.floor(Math.random() * 3) + 1;
+       const leftPosition = `left-${randomNumber.toString()}/4`
+       console.log(leftPosition)
         // Render the image only if pictureText matches 'Angst Gallery'
-        if (pictureText !== 'Angst Gallery') return null;
+        if (pictureText !== "Angst Gallery" && pictureText !== "Jason Phelps" ) return null;
+
+        const diplayPic = (pictureText) =>{
+
+
+          switch(pictureText){
+
+            case "Angst Gallery":
+                return angstPic
+                
+            
+            case "Jason Phelps":
+              return jasonRiverPic
+            
+          }
+          
+        }
       
         return (
           <motion.img
-            className='absolute z-50 left-1/4 top-1/4 w-48 h-48'
+            className={`absolute z-50 ${leftPosition} top-1/4 w-48 h-48`}
             transition={{
               duration: 1, // Duration of the hover animation
               ease: 'easeInOut', // Easing function for a smoother transition
             }}
-            src={angstPic} // Set the image source directly
+            src={diplayPic(pictureText)} // Set the image source directly
             alt="Angst Gallery" // Always provide an alt attribute for images
           />
         );
@@ -96,7 +113,7 @@ const Bio = () => {
 
 <div>
       <h1 className="text-6xl mb-4 font-moret">
-        <span style = {highlightedStyle}>Jason Phelps </span>
+        <span style = {highlightedStyle}> <PicText text ="Jason Phelps"/> </span>
         is an artist and art educator in the American Pacific Northwest. He was raised around the 
          <em> mountains and rivers</em> of Southern Oregon, where he fostered an instinct to wander, collect, and create. 
          </h1>
