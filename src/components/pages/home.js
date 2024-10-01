@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import React,{useState,useEffect} from 'react'
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
+import Art from '../pages/art'
 import { Link } from 'react-router-dom';
 import Navbar from '../navbar'
 import image11 from '../artPicturesSmall/FF214426-E197-4400-A8C5-15F3704B6579.jpeg'
@@ -16,6 +17,9 @@ import image10 from '../artPicturesSmall/IMG_8981.jpeg'
 import image1 from '../artPicturesSmall/IMG_8984.jpeg'
 
 const Home =()=>{
+
+    const [showArt,setShowArt] = useState(false)
+    const [artPic,setartPic] = useState('')
 
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
@@ -52,8 +56,8 @@ return (
 
 
 <Navbar style = {'Portfolio'}/>
-
-<motion.div 
+{showArt?<Art artPic = {artPic}/>:
+(<motion.div 
         transition={{
           duration: 1, // Duration of the hover animation
           ease: 'easeInOut' // Easing function for a smoother transition
@@ -68,8 +72,8 @@ className="mt-20 ml-10 mr-10 mb-20">
     <motion.div 
     initial={{ opacity: 0 }}
     animate={ { opacity: 1, transition: { duration: 2 } }
-
     }
+    onClick={() => {setShowArt(true);setartPic(imgSrc)}}
     exit={{ opacity: 0 }}
     key={index} className=" border-white border-2 relative object-contain flex items-center justify-center group overflow-hidden cursor-pointer"> {/* Container for each image */}
       <motion.img
@@ -77,9 +81,11 @@ className="mt-20 ml-10 mr-10 mb-20">
             { 
             filter: 'blur(2px)',
             scale: 1.1,
-            opacity:.5
+            opacity:.5,
+            
         }
         }
+        
         transition={{
             duration: 1, // Duration of the hover animation
             ease: 'easeInOut' // Easing function for a smoother transition
@@ -102,12 +108,12 @@ className="mt-20 ml-10 mr-10 mb-20">
                 </Masonry>
             </ResponsiveMasonry>
             </motion.div>
-</div>
+)
             
-           
+      }    
         
 
- 
+        </div>
 
 );
   
