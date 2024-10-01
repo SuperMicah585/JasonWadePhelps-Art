@@ -44,7 +44,7 @@ const LinkedInClick = () =>{
 <div className='relative h-content mt-72 font-thin font-moret text-black mb-10 flex items-center justify-center flex-col'>
 <div className = 'max-w-5xl'>
     <div className = 'text-9xl hover:opacity-50 font-moret border-b-2 border-black'>
-<a href='mailto:jasonwadephelps@gmail.com'> Get in Touch! </a>
+<a href='mailto:jasonwadephelps@gmail.com'> Get in touch! </a>
     </div>
 
 
