@@ -35,32 +35,33 @@ const LinkedInClick = () =>{
 
     return(
 
-        <div className='h-screen white'>
+        <div className='h-screen w-screen bg-white'>
 <div className='absolute top-0'>
     <NavBar style={'Contact'}/>
 </div>
 
-<div className='flex flex-col justify-center  mt-20 '>
-<div className = 'flex items-center ml-10 content-start'>
-<div className='overflow-hidden max-h-600 gap-3 text-black mt-20 grid grid-cols-2 col-start-2 border-black border-2 place-items-center'>
 
-<div className='text-black mb-10 flex items-center justify-center flex-col grow'>
-<div>
-    <p>
-     
-Purchasing inquiries, proposals for representation, <br/>and general questions should be sent via email to: 
-    </p>
-    <br />
-    <p className='font-bold hover:text-slate-300'>
-      <a href="mailto:jasonwadephelps@gmail.com">jasonwadephelps@gmail.com</a>
-    </p>
-    <br />
-    <p>
-      See more of my progress and inspiration on social media at:
-    </p>
+<div className='relative h-content mt-72 font-thin font-moret text-black mb-10 flex items-center justify-center flex-col'>
+<div className = 'max-w-5xl'>
+    <div className = 'text-9xl hover:opacity-50 font-moret border-b-2 border-black'>
+<a href='mailto:jasonwadephelps@gmail.com'> Get in Touch! </a>
     </div>
 
-<div className='flex items-center justify-center flex-row'>
+
+<div className ='text-3xl mt-5 font-termina'>
+<ul>
+  <li>Purchasing Inquiries</li>
+  <li>Proposals for Representation</li>
+  <li>General Questions</li>
+</ul>
+
+</div>
+    </div>
+
+    <div className ='mt-32 font-moret'>
+      See more of my progress and inspiration on social media at:
+    </div>
+<div className='font-moret flex '>
 
 <div onClick = {instragramClick} className='hover:opacity-50 cursor-pointer mt-10'>
   <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" className="bi bi-instagram" viewBox="0 0 16 16">
@@ -83,25 +84,16 @@ Purchasing inquiries, proposals for representation, <br/>and general questions s
 
 
 </div>
-  </div>
-
-<div className = 'overflow-hidden'>
-    <motion.img
-      src={jason}
-      className="overflow-hidden hover:opacity-50 z-25 object-contain w-full h-full"
-    />
-</div>
+  
 
 
 
   </div>
   </div>
 
-</div>
 
 
 
-</div>
 
 
 

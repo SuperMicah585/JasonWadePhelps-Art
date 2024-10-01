@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { Link } from 'react-router-dom';
 import NavBar from '../navbar';
 import angstPic from '../aboutPictures/angst.png'
 import { motion } from "framer-motion"
@@ -64,6 +65,22 @@ const Bio = () => {
         );
       };
 
+      const HandleResumeClick = () =>{
+
+        return(
+
+          <Link
+                    to='/CV'
+                  >
+              <div className='flex justify-center border-double items-center rounded-full hover:bg-black hover:text-white font-termina w-48 h-12 border-black border-2'> {/* Added tight line height */}
+                RESUME
+              </div>
+
+          </Link>
+        )
+
+      }
+
     return(
 <div className='h-screen w-screen bg-white overflow-scroll'>
 
@@ -71,7 +88,9 @@ const Bio = () => {
 
 <motion.div className='ml-10 h-content mt-24 flex justify-center'>
 
-<div className ='mt-24 mb-20 max-w-4xl items-center text-sm justify-center bg-white text-sm cursor-default object-contain rounded-md'>
+<div className ='mt-24 mb-20 max-w-4xl flex items-center text-sm flex-col gap-20 justify-center bg-white text-sm cursor-default object-contain rounded-md'>
+
+
 <div>
       <h1 className="text-6xl mb-4 font-moret">
         <span style = {highlightedStyle}>Jason Phelps </span>
@@ -102,12 +121,13 @@ const Bio = () => {
         Contact Jason for commissions or collaboration at 
         <a href="mailto:jasonwadephelps@gmail.com" style={emailStyle}> jasonwadephelps@gmail.com</a>
       </p>
+      
       </div>
     </div>
 
 
 
- 
+    <HandleResumeClick/>
 
 
 </div>

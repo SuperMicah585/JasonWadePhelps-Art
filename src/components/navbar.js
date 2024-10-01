@@ -10,7 +10,7 @@ const NavBar = ({ style }) => {
 `;
 
   const [isHovered, setIsHovered] = useState('');
-  const navBar = ['Portfolio','About','Contact','CV' ];
+  const navBar = ['Portfolio','About','Contact'];
   const text = "Jason Wade Phelps";
 
 
