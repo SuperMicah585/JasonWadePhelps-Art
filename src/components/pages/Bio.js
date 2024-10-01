@@ -72,9 +72,12 @@ const Bio = () => {
           <Link
                     to='/CV'
                   >
-              <div className='flex justify-center border-double items-center rounded-full hover:bg-black hover:text-white font-termina w-48 h-12 border-black border-2'> {/* Added tight line height */}
-                RESUME
-              </div>
+              <motion.div 
+              
+
+              className='flex justify-center border-double items-center rounded-full hover:bg-black hover:text-white font-moret tracking-widest	font-bold w-48 h-12 border-black border-2'> {/* Added tight line height */}
+                RESUME!
+              </motion.div>
 
           </Link>
         )
