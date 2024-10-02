@@ -46,14 +46,15 @@ const Bio = () => {
 
 
       const PicPopUp = ({ pictureText }) => {
-        console.log(pictureText,"Test")
-        const randomNumber = Math.floor(Math.random() * 3) + 1;
-       const leftPosition = `left-${randomNumber.toString()}/4`
-       console.log(leftPosition)
+       
+        const leftPositions = ['left-1/4', 'left-2/4', 'left-3/4'];
+        const randomNumber = Math.floor(Math.random() * 3);
+        const leftPosition = leftPositions[randomNumber];
+  
         // Render the image only if pictureText matches 'Angst Gallery'
         if (pictureText !== "Angst Gallery" && pictureText !== "Jason Phelps" ) return null;
 
-        const diplayPic = (pictureText) =>{
+        const displayPic = (pictureText) =>{
 
 
           switch(pictureText){
@@ -76,7 +77,7 @@ const Bio = () => {
               duration: 1, // Duration of the hover animation
               ease: 'easeInOut', // Easing function for a smoother transition
             }}
-            src={diplayPic(pictureText)} // Set the image source directly
+            src={displayPic(pictureText)} // Set the image source directly
             alt="Angst Gallery" // Always provide an alt attribute for images
           />
         );
