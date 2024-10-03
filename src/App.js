@@ -5,6 +5,7 @@ import Bio from './components/pages/Bio';
 import Contact from './components/pages/contact'
 import Cv from './components/pages/cv'
 import Home from './components/pages/home'
+import Art from './components/pages/art'
 function App() {
 
 
@@ -16,6 +17,8 @@ function App() {
         <Route path="/about" element={<Bio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cv" element={<Cv />} />
+        <Route path="/portfolio/:artId" element={<Art />} />
+
       </Routes>
     </Router>
   );

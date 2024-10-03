@@ -1,11 +1,16 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import NavBar from '../navbar';
 import Magnifier from "react-magnifier";
 import angstPic from '../aboutPictures/angst.png'
 import jasonRiverPic from '../aboutPictures/jason_on_river.jpg'
 import { motion } from "framer-motion"
-const Art = ({artPic,closeTrigger}) => {
+import {useLocation,Link } from 'react-router-dom';
+const Art = ({}) => {
 
+  const location = useLocation();
+  const { artPic } = location.state || {}; // Access the passed state
+
+/*need to handle smaller screen size for mag glass */
         const [pictureText,setPictureText] = useState('')
         console.log(pictureText,"hello")
         const highlightedStyle = {
@@ -49,7 +54,7 @@ const Art = ({artPic,closeTrigger}) => {
 
 
         return(
-          <div  className ='right-1 absolute hover:opacity-25 z-25 w-8 h-8 bg-gray-500 flex items-center justify-center opacity-35 rounded-full cursor-pointer' onClick = {closeTrigger}>
+          <div  className ='right-1 absolute hover:opacity-25 z-25 w-8 h-8 bg-gray-500 flex items-center justify-center opacity-35 rounded-full cursor-pointer' >
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -106,12 +111,14 @@ const Art = ({artPic,closeTrigger}) => {
  
 <div className = 'flex justify-center h-screen w-screen'>
   <div className='z-50 mt-1'>
+  <Link to='/'>
 <CloseButton/>
+</Link>
 </div> 
-<div className ='basis-full relative mt-10 mb-10  flex items-start text-sm gap-10 flex-wrap justify-center bg-white text-sm cursor-default object-contain rounded-md'>
+<div className ='mr-5 ml-5 basis-full relative mt-10 mb-10  flex items-start text-sm gap-10 flex-wrap justify-center bg-white text-sm cursor-default object-contain rounded-md'>
 
 
-<div className = ' h-full flex items-start justify-start'>
+<div className = 'h-full flex items-start justify-start'>
     <Magnifier
             style = {{objectFit: 'contain',height:'100%',width:'100%'}}
             height ='100%'
@@ -120,12 +127,13 @@ const Art = ({artPic,closeTrigger}) => {
             alt="Art" // Always provide an alt attribute for images
             mgWidth = {300}
             mgHeight = {300}
+            
           />
 </div>
 
 
     
-         <div className='h-full max-w-screen-sm flex flex-col items-start justify-start'>
+         <div className='h-full max-w-md flex flex-col items-start justify-start'>
          <p>
          Jason worked as a vineyard hand, forester, and carpenter, all of which contributed to shaping his aesthetics, content, and process. He went on to receive his <span style={highlightedStyle}>Bachelor of Fine Arts</span> degree in both painting and sculpture at Southern Oregon University. Being heavily influenced by <span style={italicStyle}>Joseph Beuys</span> and the notion that art can have a transformative effect on the people who experience it, Jason decided to pursue his <span style={highlightedStyle}>Master's in the Arts of Teaching</span> from Pacific University in Oregon.
       </p>

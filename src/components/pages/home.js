@@ -62,8 +62,8 @@ return (
 
 
 
-{showArt?<Art artPic = {artPic} closeTrigger = {closeTrigger}/>:
-(<><Navbar style = {'Portfolio'}/>
+
+<Navbar style = {'Portfolio'}/>
 <motion.div 
         transition={{
           duration: 1, // Duration of the hover animation
@@ -75,14 +75,20 @@ className="mt-20 ml-10 mr-10 mb-20">
                 columnsCountBreakPoints={{600: 1,900:2, 1200: 3, 1400: 3}}
             >
                 <Masonry gutter = '5px'>
-                {images.map((imgSrc, index) => (
+    {images.map((imgSrc, index) => (
+    <Link
+    key={index}
+    to={`/portfolio/${index}`}
+    state={{ artPic: imgSrc}}
+  >
+    
+              
     <motion.div 
     initial={{ opacity: 0 }}
     animate={ { opacity: 1, transition: { duration: 2 } }
     }
-    onClick={() => {setShowArt(true);setartPic(imgSrc)}}
     exit={{ opacity: 0 }}
-    key={index} className=" border-white border-2 relative object-contain flex items-center justify-center group overflow-hidden cursor-pointer"> {/* Container for each image */}
+ className=" border-white border-2 relative object-contain flex items-center justify-center group overflow-hidden cursor-pointer"> {/* Container for each image */}
       <motion.img
             whileHover={
             { 
@@ -111,13 +117,14 @@ className="mt-20 ml-10 mr-10 mb-20">
 
       </div>
       </motion.div> 
+      </Link>
   ))}
                 </Masonry>
             </ResponsiveMasonry>
-            </motion.div> </>
-)
+            </motion.div>
+
             
-      }    
+          
         
 
         </div>
