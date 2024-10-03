@@ -64,7 +64,7 @@ const LinkedInClick = () =>{
     </div>
 
 
-    <div className="flex font-Moret tracking-widest text-xs gap-10">
+    <div className="flex font-Moret tracking-widest text-xs gap-5">
      
         {navBar.map((item) => (
                     <Link

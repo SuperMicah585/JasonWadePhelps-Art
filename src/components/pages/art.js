@@ -108,22 +108,24 @@ const Art = ({artPic,closeTrigger}) => {
   <div className='z-50 mt-1'>
 <CloseButton/>
 </div> 
-<div className ='basis-full relative mt-10 mb-10  flex items-start text-sm gap-10 justify-center bg-white text-sm cursor-default object-contain rounded-md'>
+<div className ='basis-full relative mt-10 mb-10  flex items-start text-sm gap-10 flex-wrap justify-center bg-white text-sm cursor-default object-contain rounded-md'>
 
 
-<div className = 'min-w-fit	h-full flex items-center justify-center'>
+<div className = ' h-full flex items-start justify-start'>
     <Magnifier
-            style = {{height:'100%',width:'100%'}}
+            style = {{objectFit: 'contain',height:'100%',width:'100%'}}
             height ='100%'
             width = '100%'
             src={artPic} // Set the image source directly
             alt="Art" // Always provide an alt attribute for images
+            mgWidth = {300}
+            mgHeight = {300}
           />
 </div>
 
 
     
-         <div className='h-full flex-wrap max-w-screen-sm flex flex-col items-start justify-start'>
+         <div className='h-full max-w-screen-sm flex flex-col items-start justify-start'>
          <p>
          Jason worked as a vineyard hand, forester, and carpenter, all of which contributed to shaping his aesthetics, content, and process. He went on to receive his <span style={highlightedStyle}>Bachelor of Fine Arts</span> degree in both painting and sculpture at Southern Oregon University. Being heavily influenced by <span style={italicStyle}>Joseph Beuys</span> and the notion that art can have a transformative effect on the people who experience it, Jason decided to pursue his <span style={highlightedStyle}>Master's in the Arts of Teaching</span> from Pacific University in Oregon.
       </p>
