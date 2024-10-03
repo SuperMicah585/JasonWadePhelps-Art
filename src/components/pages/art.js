@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import NavBar from '../navbar';
+import Magnifier from "react-magnifier";
 import angstPic from '../aboutPictures/angst.png'
 import jasonRiverPic from '../aboutPictures/jason_on_river.jpg'
 import { motion } from "framer-motion"
@@ -82,27 +83,42 @@ const Art = ({artPic}) => {
       };
 
 
+      const ZoomableImage = ({ artPic }) => {
+        return (
+          <div className="relative overflow-hidden w-full h-full mt-24 mb-20 flex items-center justify-center bg-white rounded-md">
+            <div className="transition-transform duration-300 ease-in-out transform hover:scale-125">
+              <img
+                src={artPic}
+                alt="Art"
+                className="object-contain max-w-full max-h-full"
+                style={{ cursor: 'zoom-in' }} // Optional cursor change on hover
+              />
+            </div>
+          </div>
+        );
+      };
+
     return(
-<div className='h-screen w-screen bg-white overflow-scroll'>
+<div className='h-screen z-50 w-screen bg-white'>
 
     <NavBar style={'About'}/>
-<div className = 'flex justify-center h-fit w-screen border-black border-2'>
-<div className =' ml-10 mr-10 basis-full relative mt-24 mb-20  flex flex-nowrap items-start text-sm gap-20 justify-center bg-white text-sm cursor-default object-contain rounded-md'>
+<div className = 'flex justify-center h-screen w-screen'>
+<div className ='basis-full relative mt-24 mb-20  flex items-start text-sm gap-10 justify-center bg-white text-sm cursor-default object-contain rounded-md'>
 
 
-<div className='w-9/12'>
-    <motion.img
-            className = 'object-cover'
-            transition={{
-              duration: 1, // Duration of the hover animation
-              ease: 'easeInOut', // Easing function for a smoother transition
-            }}
+<div className = ' h-full flex items-center justify-center'>
+    <Magnifier
+            style = {{height:'100%',width:'100%'}}
+            height ='100%'
+            width = '100%'
             src={artPic} // Set the image source directly
             alt="Art" // Always provide an alt attribute for images
           />
-    </div>
+</div>
+
+
     
-         <div className='w-3/12 max-w-72 flex-shrink-0'>
+         <div className='max-w-xl'>
          <p>
          Jason worked as a vineyard hand, forester, and carpenter, all of which contributed to shaping his aesthetics, content, and process. He went on to receive his <span style={highlightedStyle}>Bachelor of Fine Arts</span> degree in both painting and sculpture at Southern Oregon University. Being heavily influenced by <span style={italicStyle}>Joseph Beuys</span> and the notion that art can have a transformative effect on the people who experience it, Jason decided to pursue his <span style={highlightedStyle}>Master's in the Arts of Teaching</span> from Pacific University in Oregon.
       </p>
