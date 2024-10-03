@@ -7,6 +7,13 @@ import { motion } from "framer-motion"
 import {useLocation,Link } from 'react-router-dom';
 const Art = ({}) => {
 
+
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+});
+
+
   const location = useLocation();
   const { artPic } = location.state || {}; // Access the passed state
 
@@ -29,6 +36,23 @@ const Art = ({}) => {
           textDecoration: 'none',
           fontWeight: 'bold',
         };
+
+
+        useEffect(() => {
+          const handleResize = () => {
+              setWindowSize({
+                  width: window.innerWidth,
+                  height: window.innerHeight,
+              });
+          };
+      
+          window.addEventListener('resize', handleResize);
+      
+          // Clean up the event listener on component unmount
+          return () => {
+              window.removeEventListener('resize', handleResize);
+          };
+      }, []);
 
 
       const PicText = ({text}) =>{
@@ -54,7 +78,7 @@ const Art = ({}) => {
 
 
         return(
-          <div  className ='right-1 absolute hover:opacity-25 z-25 w-8 h-8 bg-gray-500 flex items-center justify-center opacity-35 rounded-full cursor-pointer' >
+          <div  className ='right-1 fixed hover:opacity-25 z-25 w-8 h-8 bg-gray-500 flex items-center justify-center opacity-35 rounded-full cursor-pointer' >
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -125,8 +149,8 @@ const Art = ({}) => {
             width = '100%'
             src={artPic} // Set the image source directly
             alt="Art" // Always provide an alt attribute for images
-            mgWidth = {300}
-            mgHeight = {300}
+            mgWidth = {windowSize.height/5}
+            mgHeight = {windowSize.height/5}
             
           />
 </div>
