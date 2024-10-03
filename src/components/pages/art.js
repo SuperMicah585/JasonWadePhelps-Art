@@ -49,7 +49,7 @@ const Art = ({artPic,closeTrigger}) => {
 
 
         return(
-          <div  className ='right-5 absolute hover:opacity-25 z-25 w-10 h-10 bg-gray-500 flex items-center justify-center opacity-35 rounded-full cursor-pointer' onClick = {closeTrigger}>
+          <div  className ='right-1 absolute hover:opacity-25 z-25 w-8 h-8 bg-gray-500 flex items-center justify-center opacity-35 rounded-full cursor-pointer' onClick = {closeTrigger}>
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -99,30 +99,16 @@ const Art = ({artPic,closeTrigger}) => {
       };
 
 
-      const ZoomableImage = ({ artPic }) => {
-        return (
-          <div className="relative overflow-hidden w-full h-full mt-24 mb-20 flex items-center justify-center bg-white rounded-md">
-            <div className="transition-transform duration-300 ease-in-out transform hover:scale-125">
-              <img
-                src={artPic}
-                alt="Art"
-                className="object-contain max-w-full max-h-full"
-                style={{ cursor: 'zoom-in' }} // Optional cursor change on hover
-              />
-            </div>
-          </div>
-        );
-      };
 
     return(
 <div className='h-screen z-50 w-screen bg-white'>
 
  
 <div className = 'flex justify-center h-screen w-screen'>
-  <div className='mt-5'>
+  <div className='z-50 mt-1'>
 <CloseButton/>
 </div> 
-<div className ='basis-full relative mt-24 mb-20  flex items-start text-sm gap-10 justify-center bg-white text-sm cursor-default object-contain rounded-md'>
+<div className ='basis-full relative mt-10 mb-10  flex items-start text-sm gap-10 justify-center bg-white text-sm cursor-default object-contain rounded-md'>
 
 
 <div className = 'min-w-fit	h-full flex items-center justify-center'>
