@@ -26,13 +26,19 @@ const Home =()=>{
         height: window.innerHeight,
       });
 
-
+    
     
     const images = [
         image1, image6, image11, image8, image5, 
         image7, image3, image4, image9, image10, 
         image2
     ];
+
+
+    const closeTrigger = () =>{
+
+      setShowArt(false)
+  }
 
 
     useEffect(() => {
@@ -55,9 +61,10 @@ return (
  
 
 
-<Navbar style = {'Portfolio'}/>
-{showArt?<Art artPic = {artPic}/>:
-(<motion.div 
+
+{showArt?<Art artPic = {artPic} closeTrigger = {closeTrigger}/>:
+(<><Navbar style = {'Portfolio'}/>
+<motion.div 
         transition={{
           duration: 1, // Duration of the hover animation
           ease: 'easeInOut' // Easing function for a smoother transition
@@ -107,7 +114,7 @@ className="mt-20 ml-10 mr-10 mb-20">
   ))}
                 </Masonry>
             </ResponsiveMasonry>
-            </motion.div>
+            </motion.div> </>
 )
             
       }    
