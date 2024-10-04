@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useRef} from 'react'
 import NavBar from '../navbar';
 import Magnifier from "react-magnifier";
 import angstPic from '../aboutPictures/angst.png'
@@ -14,12 +14,17 @@ const Art = ({}) => {
 });
 
 
+
+
   const location = useLocation();
   const { artPic } = location.state || {}; // Access the passed state
 
+
+
+
 /*need to handle smaller screen size for mag glass */
         const [pictureText,setPictureText] = useState('')
-        console.log(pictureText,"hello")
+
         const highlightedStyle = {
           fontWeight: 'bold',
                
@@ -97,7 +102,7 @@ const Art = ({}) => {
         return(
           <div  className ='z-50 right-1 fixed hover:opacity-25 z-25 w-8 h-8 bg-gray-500 flex items-center justify-center opacity-35 rounded-full cursor-pointer' >
   
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="size-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
   </svg>
   
@@ -166,7 +171,7 @@ const Art = ({}) => {
         onClick={() => scroll(10, 1, 'up')}
         style={{ marginBottom: '20px' }}
       >
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
 </svg>
 
@@ -176,7 +181,7 @@ const Art = ({}) => {
         onClick={() => scroll(10, 1, 'down')}
 
       >
-       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 </svg>
 

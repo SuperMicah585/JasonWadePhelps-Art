@@ -109,9 +109,10 @@ className="mt-20 ml-10 mr-10 mb-20">
         className="object-contain w-full h-full" // Ensures image fills the cell
       />
 
-      <div className ='absolute flex justify-center items-center group 
+      <div className ='absolute flex-wrap flex justify-center items-center group 
       text-black text-opacity-0 group-hover:text-opacity-100 pointer-events-none'>
-        <div className ='font-termina text-6xl font-black'>
+        <div className ='text-center font-termina text-6xl font-black'>
+          
                     COOL NAME
         </div>
 
