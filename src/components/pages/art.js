@@ -149,8 +149,9 @@ const Art = ({}) => {
             width = '100%'
             src={artPic} // Set the image source directly
             alt="Art" // Always provide an alt attribute for images
-            mgWidth = {windowSize.height/5}
-            mgHeight = {windowSize.height/5}
+            mgWidth = {windowSize.height/3}
+            mgHeight = {windowSize.height/3}
+
             
           />
 </div>
