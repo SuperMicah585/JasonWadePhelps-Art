@@ -208,7 +208,7 @@ const Art = ({}) => {
 
 
     
-         <div className='h-full max-w-md flex flex-col items-start justify-start'>
+         <div className='h-full mb-20 max-w-md flex flex-col items-start justify-start'>
          <p>
          Jason worked as a vineyard hand, forester, and carpenter, all of which contributed to shaping his aesthetics, content, and process. He went on to receive his <span style={highlightedStyle}>Bachelor of Fine Arts</span> degree in both painting and sculpture at Southern Oregon University. Being heavily influenced by <span style={italicStyle}>Joseph Beuys</span> and the notion that art can have a transformative effect on the people who experience it, Jason decided to pursue his <span style={highlightedStyle}>Master's in the Arts of Teaching</span> from Pacific University in Oregon.
       </p>
