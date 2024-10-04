@@ -159,16 +159,14 @@ const Art = ({}) => {
 <CloseButton/>
 </Link>
 {windowSize.width<500?
-<div className = 'flex flex-col fixed'>
-  <motion.button 
 
+<div  className ='z-50 flex flex-col justify-center items-center fixed bg-gray-500 opacity-35 cursor-pointer' >
+  <motion.button 
+        className = 'hover:opacity-100'
         onClick={() => scroll(10, 1, 'up')}
-        initial={{ opacity: 0.8 }}
-        whileHover={{ scale: 1.1, opacity: 1 }}
-        whileTap={{ scale: 0.95 }}
         style={{ marginBottom: '20px' }}
       >
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
 </svg>
 
@@ -176,12 +174,9 @@ const Art = ({}) => {
 </motion.button>
 <motion.button 
         onClick={() => scroll(10, 1, 'down')}
-        initial={{ opacity: 0.8 }}
-        whileHover={{ scale: 1.1, opacity: 1 }}
-        whileTap={{ scale: 0.95 }}
-        style={{ marginBottom: '20px' }}
+
       >
-       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 </svg>
 
@@ -194,7 +189,7 @@ const Art = ({}) => {
 
 <div className = 'h-full flex items-start justify-start'>
     <Magnifier
-            style = {{objectFit: 'contain',height:'100%',width:'100%'}}
+            style = {{objectFit: windowSize.width<500?'cover':'contain',height:'100%',width:'100%'}}
             height ='100%'
             width = '100%'
             src={artPic} // Set the image source directly
