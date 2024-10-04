@@ -70,7 +70,7 @@ const LinkedInClick = () =>{
                     <Link
                     to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
                   >
-          <div key={item} className="flex font-medium hover:opacity-50 flex-col justify-center items-center cursor-pointer"
+          <div key={item} className="flex overflow-hidden font-medium hover:opacity-50 flex-col justify-center items-center cursor-pointer"
           onMouseEnter={() => setIsHovered(item)} // Set hover state to true
           onMouseLeave={() => setIsHovered('')} // Set hover state to false
           >
@@ -80,7 +80,7 @@ const LinkedInClick = () =>{
 
 
 <div 
-className="absolute mr-1 h-5 mt-2 w-fit overflow-hidden "
+className="absolute mr-1 h-5 mt-2 w-fit"
 
 >
 
@@ -89,7 +89,7 @@ className="absolute mr-1 h-5 mt-2 w-fit overflow-hidden "
 
       height="100%"
       xmlns="http://www.w3.org/2000/svg"
-      className = 'w-full'
+      className = 'w-16'
 
     >
     
