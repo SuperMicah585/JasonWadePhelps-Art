@@ -73,12 +73,29 @@ const Art = ({}) => {
         )
       }
 
+   
+
+      
+        const scroll = (scrollSpeed, scrollDuration,direction) => {
+          const totalScroll = window.innerHeight / 5; // Adjust this value to control how much to scroll
+          const increment = scrollSpeed; // Pixels to scroll each interval
+          let scrolled = 0; // Track how much has been scrolled
+        
+          const scrollInterval = setInterval(() => {
+            if (scrolled < totalScroll) {
+              window.scrollBy(0, direction === 'up' ? -increment : increment); // Use -increment to scroll up
+              scrolled += increment;
+            } else {
+              clearInterval(scrollInterval); // Stop the interval once the target is reached
+            }
+          }, scrollDuration / (totalScroll / increment)); // Calculate interval timing
+        };
 
       const CloseButton = () =>{
 
 
         return(
-          <div  className ='right-1 fixed hover:opacity-25 z-25 w-8 h-8 bg-gray-500 flex items-center justify-center opacity-35 rounded-full cursor-pointer' >
+          <div  className ='z-50 right-1 fixed hover:opacity-25 z-25 w-8 h-8 bg-gray-500 flex items-center justify-center opacity-35 rounded-full cursor-pointer' >
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -88,6 +105,8 @@ const Art = ({}) => {
         )
   
       }
+
+      
 
 
       const PicPopUp = ({ pictureText }) => {
@@ -130,14 +149,45 @@ const Art = ({}) => {
 
 
     return(
-<div className='h-screen z-50 w-screen bg-white'>
+<div className='h-screen z-25 w-screen bg-white'>
 
  
 <div className = 'flex justify-center h-screen w-screen'>
+  <div>
   <div className='z-50 mt-1'>
   <Link to='/'>
 <CloseButton/>
 </Link>
+{windowSize.width<500?
+<div className = 'flex flex-col fixed'>
+  <motion.button 
+
+        onClick={() => scroll(10, 1, 'up')}
+        initial={{ opacity: 0.8 }}
+        whileHover={{ scale: 1.1, opacity: 1 }}
+        whileTap={{ scale: 0.95 }}
+        style={{ marginBottom: '20px' }}
+      >
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+</svg>
+
+
+</motion.button>
+<motion.button 
+        onClick={() => scroll(10, 1, 'down')}
+        initial={{ opacity: 0.8 }}
+        whileHover={{ scale: 1.1, opacity: 1 }}
+        whileTap={{ scale: 0.95 }}
+        style={{ marginBottom: '20px' }}
+      >
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+</svg>
+
+</motion.button></div>:null
+}
+</div>
 </div> 
 <div className ='mr-5 ml-5 basis-full relative mt-10 mb-10  flex items-start text-sm gap-10 flex-wrap justify-center bg-white text-sm cursor-default object-contain rounded-md'>
 
