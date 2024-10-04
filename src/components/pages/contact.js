@@ -58,7 +58,7 @@ const LinkedInClick = () =>{
 </div>
     </div>
 
-    <div className ='mt-32 font-moret'>
+    <div className ='mt-32 font-semibold font-moret'>
       See more of my progress and inspiration on social media at:
     </div>
 <div className='font-moret flex '>

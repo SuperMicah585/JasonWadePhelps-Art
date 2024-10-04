@@ -33,11 +33,14 @@ const Bio = () => {
         className="inline border-b-2 border-dotted border-black"
         onMouseEnter = {()=>setPictureText(text)}
         onMouseLeave = {()=>setPictureText('')}
-         whileHover={
-          { 
-          opacity:.5
-      }
-      }>
+        whileHover={{
+          opacity: 0.5,
+          borderBottomWidth: '4px', // Change the border width
+          y: -2, // Move the border slightly upwards
+          transition: {
+            duration: 0.2, // Duration of the hover effect
+          },
+        }}>
         {text}
     </motion.div>
 

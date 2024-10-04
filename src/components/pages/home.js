@@ -111,7 +111,7 @@ className="mt-20 ml-10 mr-10 mb-20">
 
       <div className ='absolute flex-wrap flex justify-center items-center group 
       text-black text-opacity-0 group-hover:text-opacity-100 pointer-events-none'>
-        <div className ='text-center font-termina text-6xl font-black'>
+        <div className ='text-center font-termina text-7xl font-black'>
           
                     COOL NAME
         </div>
