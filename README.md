@@ -2,7 +2,8 @@
 Jason Phelp's Art Website.
 
 ## Purpose: 
-To give Jason Phelps an online space that highlights the work hes done over his art carreer
+To give Jason Phelps an online space that highlights the work hes done over his art career
+
 Live Demo: https://jasonwadephelps-art-production.up.railway.app/
 
 ## Technologies Used
